@@ -5,10 +5,12 @@ class FirstScene(Scene):
         # --- 1. 定義（const element = ... のようなもの） ---
         circle = Circle()  # 円を作る
         square = Square()  # 正方形を作る
+        triangle = Triangle()  # 三角形を作る
 
         # --- 2. スタイル設定（CSSのようなもの） ---
-        circle.set_fill(WHITE, opacity=0.5)  # ピンクで塗りつぶす
+        circle.set_fill(PINK, opacity=0.5)  # ピンクで塗りつぶす
         square.set_fill(BLUE, opacity=0.5)  # 青で塗りつぶす
+        triangle.set_fill(GREEN, opacity=0.5)  # 緑で塗りつぶす
 
         # --- 3. アニメーション実行（ここがManimの本体） ---
         
@@ -17,6 +19,9 @@ class FirstScene(Scene):
         
         # 円を正方形に変形させる（1秒かけて）
         self.play(Transform(circle, square))
+        
+        # 正方形を三角形に変形させる（1秒かけて）
+        self.play(Transform(square, triangle))
         
         # 1秒待機
         self.wait(1)
