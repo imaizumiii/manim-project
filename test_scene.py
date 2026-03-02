@@ -21,7 +21,7 @@ class FirstScene(Scene):
         self.play(Transform(circle, square))
         
         # 正方形を三角形に変形させる（1秒かけて）
-        self.play(Transform(square, triangle))
+        self.play(Transform(circle, triangle))
         
         # 1秒待機
         self.wait(1)
@@ -33,14 +33,18 @@ class FirstScene(Scene):
         
 class LatexCheck(Scene):
     def construct(self):
-        # MathTex は内部でLaTeXコンパイラを呼び出します
         # r"..." の r は、バックスラッシュをエスケープしないための記述です
         equation = MathTex(
             r"\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}"
         )
         
         # 見やすいように大きくする
-        equation.scale(2)
         
-        # アニメーションなしでパッと表示（確認用）
-        self.add(equation)
+        self.play(FadeIn(equation))
+        
+        #スケールするアニメーション
+        self.play(equation.animate.scale(2))
+        self.wait(1)
+        
+        self.play(FadeOut(equation))
+        
