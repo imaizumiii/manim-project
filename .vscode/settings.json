@@ -1,0 +1,10 @@
+{
+    "python.terminal.activateEnvironment": true,
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+
+    // manim-sideviewの設定
+    "manim-sideview.defaultManimPath": "/mnt/c/Users/PC_User/venvs/manim/bin/manim",
+    "manim-sideview.previewLooping": false,
+
+    "workbench.settings.useSplitJSON": false
+}
